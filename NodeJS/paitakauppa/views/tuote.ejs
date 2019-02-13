@@ -1,0 +1,65 @@
+<%- include("includes/header") -%>
+
+    <div class="container">
+
+      <div class="row pt-4">
+
+        <div class="col-lg-3">
+            <div class="list-group">
+            <a href="/" class="list-group-item">Palaa tuotelistaukseen</a>
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+
+  <form method="POST" action="/ostoskori/">
+
+            <div class="mb-4">
+              <div class="card h-100">
+                <div class="card-body row">
+
+                  <div class="col-lg-5">
+
+                  <img class="card-img-top" src="/img/<%=tuote.kuva%>" alt="">
+
+                  </div>
+
+                  <div class="col-lg-7 mt-5">
+
+                  <%=tuote.merkki%>
+                  <h4 class="card-title">
+                    <a href="/tuote/<%=tuote.id%>"><%=tuote.tyyppi%> <%=tuote.vari%></a>
+                  </h4>
+                  <h5><%=tuote.hinta.toFixed(2)%> e</h5>
+
+                  <h6>Valitse koko</h6>
+                  <% tuote.kokovaihtoehdot.forEach((kokovaihtoehto)  => { %>
+                  <div>
+                    <input type="radio" name="koko" value="<%=kokovaihtoehto%>"> <%=kokovaihtoehto%>
+                  </div>
+                  <% }); %>
+                  </div>
+
+                  <h6>Määrä</h6>
+
+                  <input type="number" class="form-control col-2" name="maara" value="1" max="10">
+
+
+
+                </div>
+                <div class="card-footer">
+                <input type="hidden" name="id" value="<%=tuote.id%>">
+                  <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-cart-plus"></i> Lisää ostoskoriin</button>
+                </div>
+              </div>
+            </div>
+
+            </form>
+        </div>        
+
+      </div>
+
+    </div>
+
+
+<%- include("includes/footer") -%>

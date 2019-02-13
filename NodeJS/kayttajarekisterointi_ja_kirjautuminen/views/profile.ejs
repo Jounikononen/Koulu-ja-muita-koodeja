@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profiili</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container">
+
+<div class="page-header" text-center>
+
+<h1>Profiilisi</h1>
+
+<div class="row" style="border:solid 1px black;" >
+<div class="col-sm-12">
+        <div class="well">
+            <h3><span class="fa fa-user"></span>Tervetuloa <%=user.username%></h3>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="row" style="border:solid 1px black;">
+    <div class="col-sm-12">
+        <div class="well" style="margin-bottom:10px;">
+            
+                <h3><span class="fa fa-user"></span>Tietosi</h3>
+
+            <p>
+                <strong>Id: </strong><%=user.id%> <br>
+                <strong>Tunnus: </strong><%=user.username%> <br>
+            </p>
+            <br>
+            <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+            
+
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

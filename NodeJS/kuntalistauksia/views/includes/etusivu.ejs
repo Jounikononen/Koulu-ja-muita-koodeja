@@ -1,0 +1,16 @@
+<% kayttajat.forEach((kayttaja) => { %>
+    <tr>                    
+        <td><%=kayttaja.val0%></td>
+        <td><%=kayttaja.val1%>  <% if (kayttaja.val1 === kayttaja.val2 ) {
+            ruotsalainen = "";
+         }
+         else {
+            ruotsalainen = ", " + "(" + kayttaja.val2 + ")" ;
+
+         }
+        %>  <%=ruotsalainen%></td>
+        <td><%=kayttaja.val3%></td>
+        <td><%=kayttaja.val4%></td>
+        <td><%=kayttaja.val5%></td>
+    </tr>
+<% }); %>

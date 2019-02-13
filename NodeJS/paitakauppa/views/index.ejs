@@ -1,0 +1,51 @@
+<%- include("includes/header") -%>
+
+    <div class="container">
+
+      <div class="row pt-4">
+
+        <div class="col-lg-3">
+
+          <h5>Valitse merkki</h5>
+
+          <div class="list-group">
+            <a href="/merkki/Andersson" class="list-group-item">Andersson</a>
+            <a href="/merkki/Karlsson" class="list-group-item">Karlsson</a>
+            <a href="/merkki/Törngren" class="list-group-item">Törngren</a>
+          </div>
+
+        </div>
+
+        <div class="col-lg-9">
+
+          <div class="row">
+
+          <% tuotteet.forEach((tuote) => {%>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="/tuote/<%=tuote.id%>"><img class="card-img-top" src="/img/<%=tuote.kuva%>" alt=""></a>
+                <div class="card-body">
+                  <%=tuote.merkki%>
+                  <h4 class="card-title">
+                    <a href="/tuote/<%=tuote.id%>"><%=tuote.tyyppi%> <%=tuote.vari%></a>
+                  </h4>
+                  <h5><%=tuote.hinta.toFixed(2)%> e</h5>
+                </div>
+                <div class="card-footer">
+                  <a href="#" class="btn btn-primary btn-block"><i class="fas fa-cart-plus"></i> Lisää ostoskoriin</a>
+                </div>
+              </div>
+            </div>
+
+          <% }); %>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<%- include("includes/footer") -%>

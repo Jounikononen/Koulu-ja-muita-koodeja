@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ilmoittautuminen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<a href="/"><img src="xamk_logo.png" style="width:190px; height:50px;"></a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">Etusivu</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="tapahtuma.html">Tapahtuma-aika ja -paikka</a></li>
+        <li><a href="ohjelma.html">Päivien ohjelma</a></li>
+        <li class="active"><a href="ilmottautuminen.html">Ilmoittautuminen ja lisätietoja</a></li>
+        <li><a href="majoitus.html">Majoitus</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <h3>Ilmoittautuminen ja lisätietoja</h3>
+  <p><strong>Osallistumismaksu 190 e (alv 0 %)</strong> Hintaan sisältyy ruokailut ja kahvitukset, matkat ja majoitukset ovat omakustanteisia.
+    Lisätiedot ja kysymykset: janne.turunen@xamk.fi
+    </p><br>
+
+    <h3>Ilmoittautumislomake</h3>
+    <h5>Osallistujan tiedot</h5>
+
+    <form method="POST" action="/tallenna">
+
+        <div class="form-group">
+          <label class="control-label col-sm-12">*Etu- ja sukunimi:</label>
+          <div class="col-sm-12">
+            <input class="form-control" name="viesti">
+          </div>
+          <label class="control-label col-sm-12">*Titteli/Nimike:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="titteli">
+            </div>
+            <label class="control-label col-sm-12">*Ammattikorkeakoulu tai muu organisaatio:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="koulu">
+            </div>
+            <label class="control-label col-sm-12">*Katuosoite:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="katuo">
+            </div>
+            <label class="control-label col-sm-12">*Postinumero:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="postin">
+            </div> 
+            <label class="control-label col-sm-12">*Postitoimipaikka:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="postit">
+            </div> 
+            <label class="control-label col-sm-12">*Puhelinnumero:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="puh">
+            </div> 
+            <label class="control-label col-sm-12">*Sähköpostuosoite:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="sposti">
+            </div> 
+            <h5>Muut tiedot</h5>
+            <label class="control-label col-sm-12">Erikoisruokavalio:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="ruoka">
+            </div> 
+            <label class="control-label col-sm-12">Muuta huomioitavaa tai muita terveisiä järjestäjille:</label>
+            <div class="col-sm-12">
+              <input class="form-control" name="muuta">
+            </div> 
+            </div>     
+          
+        
+            <input class="btn btn-primary" type="submit" name="laheta" value="Lähetä viesti" style="margin-left:13px;">
+    </form>    
+    
+
+</div>
+<br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<%- include("includes/header"); -%>
+
+        <h2 class="mb-4"><%=otsikko%></h2>
+        <a href="/"><button type="button" class="btn btn-primary" id="kaikki">Näytä kaikki</button></a>
+
+
+        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Kuntakoodi</th>
+                        <th>Nimi</th>
+                        <th>Maakunta</th>
+                        <th>Seutukunta</th>
+                        <th>Kuntamuoto</th>
+                    </tr>
+                </thead>
+                <tbody>    
+                    <%- include("includes/kaupungit") -%>
+                </tbody>
+            </table>    
+       
+
+<%- include("includes/footer") -%>

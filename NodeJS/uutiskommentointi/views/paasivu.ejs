@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="/js/app.js"></script>
+    <title>Demo 6: Sessiot ja autentikointi </title>
+</head>
+<body>
+    
+    <div class="container">
+
+    <h1 class="mb-2">Uutiset</h1>
+
+
+ 
+   
+        <div class="uutiset" style="border:solid 1px black;padding:30px;">
+        
+        <% uutiset.forEach((uutinen) => { %>
+
+       
+
+        
+            
+            <h3><%=uutinen.otsikko%></h3>
+            <p><%-uutinen.sisalto%></p>
+            
+           
+       
+
+        <% }); %>
+
+
+    </div>
+    <div class="kommentit" style="border:solid 1px black;padding:30px;">
+        <h3>Kommentit</h3>
+       <% kommentit.forEach((kommentti) => {  %>
+
+        <% let aika = new Date(kommentti.aikaleima); %>
+
+        <p>Uutis ID: <%=kommentti.uutisId%> 
+            <br>Käyttäjältä: <%=kommentti.kayttajaId%> 
+             <br>Lähetetty: <%=aika.getDate()%>.<%=aika.getMonth()+1%>.<%=aika.getFullYear()%></p>
+        <h5><%=kommentti.kommentti%></h5>
+        <hr>
+<% }) %>
+    </div>
+
+    <div class="kommentoi" style="border:solid 1px black;padding:30px;">
+<h5>Kommentoi</h5>
+<form method="POST" action="/kommentit/">
+        <textarea name="kommentti" rows="4" cols="50">
+           
+            </textarea> <br>
+
+       
+            <input type="submit" name="tallenna" value="Lähetä kommentti" class="btn btn-primary">
+        </form>
+        
+    <br>
+    <a href="/logout/" class="btn btn-secondary">Kirjaudu ulos</a>
+    </div>
+
+</body>
+</html>

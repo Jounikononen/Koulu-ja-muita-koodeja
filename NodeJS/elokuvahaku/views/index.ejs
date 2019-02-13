@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Elokuvat</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">       
+    </head>
+    <body>
+
+        <div class="container">
+
+        <h1 class="mb-3">Elokuvat</h1>
+
+        <h2 class="mb-3">Hae elokuvia</h2>
+
+        <!--Tässä on hakupalkki. Hakupalkin tiedot POSTitetaan app.post("/haku) functiolle main.jssän sisällä-->
+        <form class="form-inline" method="POST" action="/haku">
+            <div class="card w-100">
+                <div class="card-body">
+                <input class="form-control" type="text" name="hakusana" value="<%=lomaketiedot.hakusana%>" placeholder="Anna hakusana..." size="60">
+                <input class="btn btn-primary" type="submit" value="Käynnistä haku">
+
+                <p>Haun kohde:</p>
+                <div class="row">
+                    <!--Tässä linkitetään hakuvalintojen inculed includes-kansiosta,
+                         minkä nimi on hakuvalinta.ejs. 
+                        Tässä linkitetään 3 erinlaista radiobuttonia
+                    -->
+                    <%- include("includes/hakuvalinta", { "hakuvalinta" : "nimi" }) %>
+                    <%- include("includes/hakuvalinta", { "hakuvalinta" : "ohjaajat" }) %>
+                    <%- include("includes/hakuvalinta", { "hakuvalinta" : "nayttelijat" }) %>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    <!---Jos haettaessa tulee jokin virhe niin se ilmoitetaan alerttina hakupalkin alapuolella-->
+    <% if (virhe) { %>
+        <div class="alert alert-danger" style="margin-top:10px;">
+            <%=virhe%>
+        </div>
+    <% } %>
+
+
+    <!--Jos virhettä ei tule niin nytetään hakutuloksia tablessa hakupalkin alapuolella. -->
+        <% if (elokuvat) { %>
+
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Elokuvan Nimi</th>
+                    <th>Valmistumisvuosi</th>
+                    <th>Ohjaajat</th>
+                    <th>Näyttelijät</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!--Käytetään "forEachia" käymään läpi sopivat hakutulokset-->
+            <% elokuvat.forEach((elokuva) => { %>
+                <tr>
+                    <td><%=elokuva.nimi%></td>
+                    <td><%=elokuva.valmistumisvuosi%></td>
+                    <td><%=elokuva.ohjaajat%></td>
+                    <td><%=elokuva.nayttelijat%></td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+
+        <% } %>
+
+        </div>
+
+    </body>
+</html>

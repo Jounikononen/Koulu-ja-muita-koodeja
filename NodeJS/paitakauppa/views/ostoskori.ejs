@@ -1,0 +1,67 @@
+<%- include("includes/header") -%>
+
+    <div class="container">
+
+      <div class="row pt-4">
+
+        <div class="col-lg-3">
+            <div class="list-group">
+            <a href="/" class="list-group-item">Palaa tuotelistaukseen</a>
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+
+  <h2>Ostoskori</h2>
+
+<% if (ostoskori.length > 0) { %>
+
+
+  <% let loppusumma = 0; %>
+
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Tuote</th>
+      <th scope="col">Koko</th>
+      <th scope="col">Hinta/kpl</th>
+      <th scope="col">Määrä</th>
+      <th scope="col">Yht.
+    </tr>
+  </thead>
+  <tbody>
+
+<% ostoskori.forEach((ostos) =>  {%>
+
+<% loppusumma += ostos.rivisumma %>
+
+  <tr>
+    <td><%=ostos.nimi%></td>
+    <td><%=ostos.koko%></td>
+    <td><%=ostos.myyntihinta.toFixed(2)%></td>
+    <td><%=ostos.maara%></td>
+    <td><%=ostos.rivisumma.toFixed(2)%></td>
+  </tr>
+
+<% }); %>
+   
+  </tbody>
+</table>
+
+<p>Ostokset yhteensä: <%=loppusumma.toFixed(2)%> euroa</p>
+
+<% } else { %>
+
+
+<p>Ostoskori on tyhjä.</p>
+
+<% } %>
+
+        </div>        
+
+      </div>
+
+    </div>
+
+
+<%- include("includes/footer") -%>

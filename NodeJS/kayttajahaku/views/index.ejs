@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Demo 8: NodeJS ja MySQL (2)</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">       
+    </head>
+    <body>
+
+        <div class="container">
+
+        <h1 class="mb-3">Demo 8: NodeJS ja MySQL (2)</h1>
+
+        <h2 class="mb-3">Käyttäjähaku</h2>
+
+        <!--Tässä on hakupalkki. Hakupalkin tiedot POSTitetaan app.post("/haku) functiolle main.jssän sisällä-->
+        <form class="form-inline" method="POST" action="/haku">
+            <div class="card w-100">
+                <div class="card-body">
+                <input class="form-control" type="text" name="hakusana" value="<%=lomaketiedot.hakusana%>" placeholder="Anna hakusana..." size="60">
+                <input class="btn btn-primary" type="submit" value="Hae">
+
+                    <div class="row">
+                    <!--Tässä linkitetään sukupuolien inculed includes-kansiosta minkä nimi on sukupuolivalinta.ejs. Tässä linkitetään 3 erinlaista radiobuttonia-->
+                    <%- include("includes/sukupuolivalinta", { "sukupuoli" : "Mies" }) %>
+                    <%- include("includes/sukupuolivalinta", { "sukupuoli" : "Nainen" }) %>
+                    <%- include("includes/sukupuolivalinta", { "sukupuoli" : "Molemmat" }) %>
+                    </div>
+
+                    <div class="row">
+                    <!--Tässä linkitetään luottokorttien inculed includes-kansiosta minkä nimi on luottokorttivalinta.ejs. Tässä linkitetään 3 erinlaista radiobuttonia-->
+                    <%- include("includes/luottokorttivalinta", { "luottokorttiArvo" : "visa", "luottokorttiTeksti" : "Visa" }) %>
+                    <%- include("includes/luottokorttivalinta", { "luottokorttiArvo" : "visa-electron", "luottokorttiTeksti" : "Visa Electron" }) %>
+                    <%- include("includes/luottokorttivalinta", { "luottokorttiArvo" : "mastercard", "luottokorttiTeksti" : "Mastercard" }) %>
+                    <%- include("includes/luottokorttivalinta", { "luottokorttiArvo" : "americanexpress", "luottokorttiTeksti" : "American Express" }) %>
+                    
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    <!---Jos haettaessa tulee jokin virhe niin se ilmoitetaan alerttina hakupalkin-->
+    <% if (virhe) { %>
+        <div class="alert alert-danger" style="margin-top:10px;">
+            <%=virhe%>
+        </div>
+    <% } %>
+
+
+    <!--Jos virhettä ei tule niin nytetään hakutuloksia tablessa hakupalkin alapuolella. -->
+        <% if (kayttajat) { %>
+
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Nimi</th>
+                    <th>Sukupuoli</th>
+                    <th>Luottokortti</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!--Käytetään "forEachia" käymään läpi sopivat hakutulokset-->
+            <% kayttajat.forEach((kayttaja) => { %>
+                <tr>
+                    <td><%=kayttaja.sukunimi%>, <%=kayttaja.etunimi%></td>
+                    <td><%=kayttaja.sukupuoli%></td>
+                    <td><%=kayttaja.luottokorttityyppi%> <%=kayttaja.luottokortin_numero%></td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+
+        <% } %>
+
+        </div>
+
+    </body>
+</html>

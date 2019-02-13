@@ -1,0 +1,18 @@
+<!--Incule... Siistimpi tapa hoitaa koodia. Nämä koodit on linkitetty index.ejs:ään includeilla-->
+
+<label class="radio-inline ml-3 mt-2">
+
+                            
+                            <% if(lomaketiedot.sukupuoli == sukupuoli) { %>
+
+                            <input type="radio" name="sukupuoli" value="<%=sukupuoli%>" style="margin:10px;" checked>
+
+                            <% } else { %>
+
+                            <input type="radio" name="sukupuoli" value="<%=sukupuoli%>" style="margin:10px;">
+
+                            <% } %>
+
+                            <%=sukupuoli%>
+
+                        </label>

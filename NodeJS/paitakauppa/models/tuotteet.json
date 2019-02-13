@@ -1,0 +1,120 @@
+[
+    {
+        "id"  : 1,
+        "merkki" : "Karlsson",
+        "tyyppi" : "T-paita",
+        "vari" : "Musta",
+        "hinta" : 12, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20010-210.jpg"
+    },
+    {
+        "id"  : 2,
+        "merkki" : "Karlsson",
+        "tyyppi" : "T-paita",
+        "vari" : "Vaaleansininen",
+        "hinta" : 12, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20010-230.jpg"
+    },
+    {
+        "id"  : 3,
+        "merkki" : "Karlsson",
+        "tyyppi" : "T-paita",
+        "vari" : "Sininen",
+        "hinta" : 12, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20010-270.jpg"
+    },
+    {
+        "id"  : 4,
+        "merkki" : "Karlsson",
+        "tyyppi" : "T-paita",
+        "vari" : "Punainen",
+        "hinta" : 12, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20010-300.jpg"
+    },
+    {
+        "id"  : 5,
+        "merkki" : "Karlsson",
+        "tyyppi" : "T-paita",
+        "vari" : "Valkoinen",
+        "hinta" : 12, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20010-470.jpg"
+    },
+    {
+        "id"  : 6,
+        "merkki" : "Karlsson",
+        "tyyppi" : "T-paita",
+        "vari" : "Lime",
+        "hinta" : 12, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20010-630.jpg"
+    },
+    {
+        "id"  : 7,
+        "merkki" : "Karlsson",
+        "tyyppi" : "T-paita",
+        "vari" : "Keltainen",
+        "hinta" : 12, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20010-650.jpg"
+    },
+    {
+        "id"  : 8,
+        "merkki" : "Andersson",
+        "tyyppi" : "T-paita",
+        "vari" : "Tummansininen",
+        "hinta" : 19, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20048-210_1.jpg"
+    },
+    {
+        "id"  : 9,
+        "merkki" : "Andersson",
+        "tyyppi" : "T-paita",
+        "vari" : "Vaaleanpunainen",
+        "hinta" : 19, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20048-380_1.jpg"
+    },
+    {
+        "id"  : 10,
+        "merkki" : "Andersson",
+        "tyyppi" : "T-paita",
+        "vari" : "Oranssi",
+        "hinta" : 19,
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20048-551_1.jpg"
+    },
+    {
+        "id"  : 11,
+        "merkki" : "Andersson",
+        "tyyppi" : "T-paita",
+        "vari" : "Vihreä",
+        "hinta" : 19, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20048-600_1.jpg"
+    },
+    {
+        "id"  : 12,
+        "merkki" : "Törngren",
+        "tyyppi" : "T-paita",
+        "vari" : "Valkoinen",
+        "hinta" : 29, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20071-100.jpg"
+    },
+    {
+        "id"  : 13,
+        "merkki" : "Törngren",
+        "tyyppi" : "T-paita",
+        "vari" : "Musta",
+        "hinta" : 29, 
+        "kokovaihtoehdot" : ["XS", "S", "M", "L", "XL", "XXL", "XXXL"],
+        "kuva" : "20071-900.jpg"
+    }   
+
+]

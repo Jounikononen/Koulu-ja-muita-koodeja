@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 07: NodeJS ja MySQL</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></head>
+    <script src="//cdn.ckeditor.com/4.10.1/basic/ckeditor.js"></script>
+    <body>
+    
+<div class="container">
+
+<h1>Keskustelu</h1>
+<a class="btn btn-secondary" href="/">Takaisin</a>
+<br><br>
+
+
+<div class="keskustelu" style="border:solid 1px black;">
+
+
+    
+<% let aika = new Date(viesti.aikaleima); %>
+
+
+<h3><%=viesti.otsikko%></h3> 
+<h5><%=viesti.kirjoittaja%>, <%=aika.getHours()%>.<%=aika.getMinutes()%> <%=aika.getDate()%>.<%=aika.getMonth()+1%>.<%=aika.getFullYear()%></h5>
+<p><%-viesti.sisalto%></p>
+
+<input type="hidden" name="id" value="<%=viesti.id%>">
+
+</div>
+
+<!---Tässä näkyy kirjoitetut viestit-->
+<div class="viestit" style="border:solid 1px black;">
+    <h5></h5>
+    <p></p>
+
+</div>
+<!--Tässä voi kirjoittaa uutta kommenttia-->
+<div class="kommentoi" style="border:solid 1px black;">
+<h2>Vastaa keskusteluun</h2>
+
+<form method="POST" action="/kommentoi/">
+
+    <div class="form-group">
+        
+        <textarea name="viestisisalto" id="editor1"></textarea>
+        <script>
+            CKEDITOR.replace( 'editor1' );
+        </script>
+    </div>
+    <div class="form-group">
+        <label for="nimi">Kirjoittaja:</label>
+        <input class="form-control col-lg-6" name="viestikirjoittaja" id="viestikirjoittaja">
+    </div>
+    <input type="hidden" name="viestiid">
+    <input class="btn bt-primary" type="submit" value="tallenna muutokset">
+</form>
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>

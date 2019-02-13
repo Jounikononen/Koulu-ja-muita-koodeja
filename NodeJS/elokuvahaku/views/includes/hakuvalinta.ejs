@@ -1,0 +1,20 @@
+<!--
+    Incule...Käytä tätä jatkossa! Siistimpi tapa hoitaa koodia. 
+    Nämä koodit on linkitetty index.ejs:ään includeilla
+-->
+
+<label class="radio-inline ml-3 mt-2">
+
+    <% if(lomaketiedot.hakuvalinta == hakuvalinta) { %>
+
+    <input type="radio" name="hakuvalinta" value="<%=hakuvalinta%>" style="margin:10px;" checked>
+
+    <% } else { %>
+
+    <input type="radio" name="hakuvalinta" value="<%=hakuvalinta%>" style="margin:10px;">
+
+    <% } %>
+
+    <%=hakuvalinta%>
+
+</label>

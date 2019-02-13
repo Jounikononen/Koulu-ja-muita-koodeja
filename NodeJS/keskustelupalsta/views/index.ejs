@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Keskustelupalsta</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></head>
+<body>
+    
+<div class="container">
+
+<h1>Keskustelupalsta</h1>
+
+<h2 class="mb-5">Keskustelut</h2>
+
+<h5><a href="/aloitaKeskustelu">Aloita uusi keskustelu</a></h5>
+
+<table class="table">
+    <tbody>
+
+
+<% viestit.forEach((viesti) => { %>
+    
+<% let aika = new Date(viesti.aikaleima); %>
+
+
+<tr>
+<td><a href="/keskustelu/<%=viesti.id%>"><%=viesti.otsikko%></td></a>
+<td><%=viesti.kirjoittaja%>, <%=aika.getHours()%>.<%=aika.getMinutes()%> - <%=aika.getDate()%>.<%=aika.getMonth()+1%>.<%=aika.getFullYear()%></td>
+<td>
+
+
+</td>
+
+</tr>
+
+
+<% });%>
+
+
+    </tbody>
+</table>
+</div>
+</body>
+</html>

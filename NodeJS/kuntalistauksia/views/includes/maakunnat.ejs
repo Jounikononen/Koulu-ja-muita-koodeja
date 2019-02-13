@@ -1,0 +1,21 @@
+<% kayttajat.forEach((kayttaja) => { %>
+    <!--Tässä tsekataan onko buttonin id sama kuin kunnan nimi..-->
+    <%if (kayttaja.val3 === button.id) { %>
+
+    <tr>                    
+        <td><%=kayttaja.val0%></td>
+        <td><%=kayttaja.val1%> <% if (kayttaja.val1 === kayttaja.val2 ) {
+            ruotsalainen = "";
+         }
+         else {
+            ruotsalainen = ", " + "(" + kayttaja.val2 + ")" ;
+
+         }
+        %>  <%=ruotsalainen%></td>
+        <td><%=kayttaja.val3%></td>
+        <td><%=kayttaja.val4%></td>
+        <td><%=kayttaja.val5%></td>
+    </tr>
+
+    <%};%>
+<% }); %>
