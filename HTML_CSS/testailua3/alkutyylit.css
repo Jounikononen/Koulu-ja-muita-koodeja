@@ -1,0 +1,285 @@
+body{
+	width:960px;
+	margin:auto;
+	color:#000000;
+	background-color:#fff;
+
+}
+h1{
+	margin:0;
+	padding:5px;
+
+}
+h2 {
+	margin:0;
+	padding:0;
+	text-shadow: 5px 5px 5px #000000;
+
+}
+
+@font-face{
+	font-family:omafontti1;
+	src:url("fontti2.ttf");
+	
+}
+
+@font-face{
+	font-family:omafontti2;
+	src:url("xero4.ttf");
+	
+}
+
+@font-face {
+	font-family:omafontti3;
+	src:url("fontti3.ttf");
+	
+}
+
+#header{
+	width:100%;
+	height:50px;
+	color:#000000;
+	font-size:20px;
+	font-family:omafontti1;
+	margin-top:10px;
+	margin-bottom:20px;
+	box-shadow:5px 5px 5px #888888;
+	
+
+}
+
+#header h1{
+	position:relative;
+	animation:ani1 2s;
+	float:left;	
+}
+
+#header audio{
+	float:right;
+	padding-top:10px;
+}
+
+#header audio:hover{
+	transform:scale(1.5,1.5);
+	transition:1s;
+	
+}
+
+@keyframes ani1{
+0%{left:0px; top:-200px;}
+40%{left:0px; top:0px;}
+50%{left:0px; top:-30px;}
+70%{left:0px; top:0px;}
+85%{left:0px; top:-20px;}
+90%{left:0px; top:0px;}
+95%{left:0px; top:-10px;}
+100%{left:0px; top:0px;}	
+	
+}
+
+
+#nav{
+width:100%;
+height:20px;
+margin-bottom:30px;
+position:relative;
+animation:ani1 2s;
+clear:both;
+
+
+}
+
+#nav ul{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+
+#nav li{
+display:inline;
+float:left;
+}
+
+#nav a:link, a:visited{
+display:block;
+width:230px;
+height:20px;
+font-weight:bold;
+color:#000;
+background-color:#9cff00;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+border:1px solid black;
+border-radius:5px;
+box-shadow:5px 5px 5px #888888;
+}
+
+#nav a:hover, a:active{
+background-color:#b6c0d2;
+transform:rotate(-3deg);
+transition:1s;
+
+}
+
+#content{
+width:100%;
+min-height:450px;
+background-color:#fff;
+font:14px Verdana;
+box-shadow:5px 5px 5px #888888;
+text-align:center;
+clear:both;
+}
+
+#col1, #col2, #col3, #col4, #col5 {
+margin:20px;
+font-family:omafontti2;
+text-align:center;
+float:left;
+}
+
+@keyframes ani2{
+0%{left:0px; top:800px;}	
+100%{left:0px; top:0px;}	
+}
+
+#col1{
+width:100px;
+height:100px;
+background-color:#b9b9b9;
+position:relative;
+animation:ani2 2s;
+transform:rotate(30deg);
+}
+
+@keyframes color{
+0%{background:white;}
+25%{background:purple;}
+50%	{background:pink;}
+100%{background:white;}	
+}
+
+#col1:hover{
+animation:color 2s;	
+	
+}
+
+#col2{
+width:100px;
+height:100px;
+background-color:#b9b9b9;
+transform:skew(10deg,20deg);
+
+}
+
+#col3{
+width:200px;
+height:100px;
+background-color:#b6b6b6;
+background-image:url("mikpoli.jpg");
+background-position:center top;
+background-repeat:no-repeat;
+background-size:100%;
+}
+
+#col3:hover{
+	width:300px;
+	height:200px;
+	transition:2s;
+	transform:rotate(360deg);
+	
+}
+
+ 
+ #col4{
+	width:200px;
+	height:100px;
+	background-color:#b9b9b9;
+	opacity:0.5;
+	background-image:url("room.jpg");
+	background-repeat:no-repeat;
+	background-position:center top;
+	background-size:100%;
+}
+ 
+ #col4:hover {
+	 width:300px;
+	 heigt:200px;
+	 transition:2s;
+	 transform:rotate(360deg);
+	 opacity:1;
+	 
+ }
+ 
+ #col5 {
+	 width:150px;
+	 height:150px;
+	 background-color:#b9b9b9;
+	 background-image:url("studio.jpg");
+	 background-position:center top;
+	 background-repeat:no-repeat;
+	 background-size: 130%;
+	 clear:left;
+	 border-radius:100px;
+	 
+ }
+ 
+ #col5:hover {
+	 width:200px;
+	 height:200px;
+	 transition:2s;
+	 transform:rotate(360deg);
+	 
+	 
+ }
+ 
+ 
+ 
+#newspaper {
+	width:940px;
+	height:150px;
+	margin-top:20px;
+	padding:10px;
+	float:left;
+	clear:both;
+	box-shadow:5px 5px 5px #888888;
+	
+	column-count:4;
+	-webkit-column-count:4;
+	-moz-column-count:4;
+	
+	column-gap:20px;
+	-webkit-column-gap:20px;
+	-moz-column-gap:20px;
+	
+	column-rule:4px outset #000000;
+	-webkit-column-rule:4px outset #000000;
+	-moz-column-rule:4px outset #000000;
+}
+
+#newspaper:hover{
+	transform:scale(1.5,1.5);
+	transition:1s;
+	
+}
+
+
+
+
+#footer{
+	width:100%;
+	height:15px;
+	text-align:center;
+	font:12px;
+	font-family:omafontti3;
+	margin-top:20px;
+	padding-top:2px;
+	padding-bottom:5px;
+	float:left;
+	clear:both;
+	border-radius:5px;
+	box-shadow:5px 5px 5px #888888;
+
+}
