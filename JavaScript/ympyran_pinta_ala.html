@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Ympyrä- laskin</title>
+</head>
+<body>
+<h1>Ympyrän pinta-alan ja kehän laskeminen</h1>
+<br/>
+Syötä ympyrän säde<br/><input id="luku"/>
+<br/>
+<button type="button" onclick="teeJotain()">Laske</button>
+<div id="laatikko1"></div>
+<br/>
+<script>
+function teeJotain() {
+	//syöttötieto
+	var luku = document.getElementById("luku").value;
+	var pinta = luku * luku * 3.14159 ;
+	var keha = luku * 3.14159 * 2 ;
+	//tulostus
+	document.getElementById("laatikko1").innerHTML = "Ympyrän pinta-ala on: " + pinta +
+	" <br/> Ympyrän kehä on: " + keha;
+	
+	}
+</script>
+
+
+</body>
+</html>

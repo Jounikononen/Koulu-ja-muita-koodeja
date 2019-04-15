@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>JavaScript-pohja</title>
+</head>
+<body>
+<h1>Muuta Eurot Dollareiksi</h1>
+<h3>Syötä Euromäärä:</h3> <br/><input id="eka"/>
+<br/>
+<button type="button" onclick="laskeYhteen()">Muunna dollareiksi</button>
+<h1><div id="vastauslaatikko"></div></h1>
+
+<script>
+function laskeYhteen() {
+	//syöttötiedot
+	var euromaara = document.getElementById("eka").value;
+	//laskutoimitus
+	var summa = Number(euromaara) * Number(1.114);
+	//tulostus
+	document.getElementById("vastauslaatikko").innerHTML = "Dollareissa " + summa;
+}
+</script>
+
+
+</body>
+</html>
+

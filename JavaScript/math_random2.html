@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>oppimistehtävä 3 -juttuja</title>
+</head>
+<body>
+Montako laitetaan:<br/>
+<input id="lkm"/>
+<button type="button" onclick="toista()">Paina</button>
+<div id="laatikko"></div>
+
+<script>
+	function toista() {
+	//käyttäjän syöttämän luvun mukaan tulostus
+	var lkm = document.getElementById("lkm").value;
+	
+	//while eli alkuehtoinen toisto
+	var luku = Math.floor((Math.random()*10)+1);
+	while (luku < 9) {
+	document.getElementById("laatikko").innerHTML += "mikki Hiiri <br/>";
+	luku = Math.floor((Math.random()*10)+1);
+	if(luku == 5){
+	break;
+	}
+	}
+	//do...while eli loppuehtoinen toisto
+	var luku = Math.floor((Math.random()*10)+1);
+	do {
+	document.getElementById("laatikko").innerHTML += "mummo Ankka <br/>";
+	luku = Math.floor((Math.random()*10)+1);
+	
+	
+	}while (luku < 9);
+	//sisäkkäinen toistorakenne
+	for(var i = 0;i <10; i++) {
+		for(var j = 0;j < 5; j++){
+		document.getElementById("laatikko").innerHTML += i + "." + j + "<br/>"
+		}
+	}
+	}
+</script>
+
+
+
+
+</body>
+</html>

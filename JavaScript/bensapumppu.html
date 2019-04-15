@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>JavaScript-pohja</title>
+</head>
+<body>
+
+<h2>Litramäärän hinta</h2>
+
+Litrahinta: <input id="eka"/>
+<br/>
+Litramäärä: <input id="toka"/>
+<br/>
+<br/>
+<button type="button" onclick="laskeYhteen()">Laske maksettava</button>
+<div id="vastauslaatikko1"></div>
+<div id="vastauslaatikko2"></div>
+<div id="vastauslaatikko3"></div>
+
+<script>
+function laskeYhteen() {
+	//syöttötiedot
+	var litrahinta = document.getElementById("eka").value;
+	var litramäärä = document.getElementById("toka").value;
+	//laskutoimitus
+	var summa = Number(litrahinta) * Number(litramäärä);
+	//tulostus
+	document.getElementById("vastauslaatikko1").innerHTML = "Litrahinta: " +  litrahinta + "€"
+	document.getElementById("vastauslaatikko2").innerHTML = "Litramäärä: " + litramäärä + " litraa"
+	document.getElementById("vastauslaatikko3").innerHTML =  "Maksettava: " + summa + "€";
+	
+}
+</script>
+
+
+</body>
+</html>

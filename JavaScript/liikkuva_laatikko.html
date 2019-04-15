@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Javascript canvas animation</title>
+<style type="text/css">
+h1, h2 {
+ font-size:1em;
+}
+
+#laatikko {
+ position:absolute;
+ left:0px;
+ top:8em;
+ width:50px;
+ height:50px;
+ line-height:3em;
+ background:#99ccff;
+ border:1px solid #003366;
+ white-space:nowrap;
+ padding:0.5em;
+}
+
+</style>
+<script type="text/javascript">
+var suunta = 1; //alussa menee oikealle
+var x_sijainti = 0; //alussa on vasemmassa nurkassa
+
+function liiku() {
+	x_sijainti = parseInt(laatikko.style.left) + suunta;
+	laatikko.style.left = x_sijainti + "px";
+  
+  if(parseInt(laatikko.style.left) > 500) {
+	suunta = -1;
+  }
+  if(parseInt(laatikko.style.left) < 100) {
+	suunta = 1;
+  }
+  setTimeout(liiku,2); //rekursio 20 millisekunnin välein
+}
+function vaihdaSuunta(evt) { //evt sisältää tiedon mitä nppäintä painat
+	switch (evt.keyCode) {
+		case 40:
+		suunta = 20;
+		break;
+		case 38:
+		suunta = -20;
+		break;
+		case 37:
+		suunta = -1;
+		break;
+		case 39:
+		suunta = 1;
+		break;
+	}
+}
+function init() {
+  laatikko = document.getElementById('laatikko'); 
+  laatikko.style.left = '0px'; 
+  window.addEventListener('keydown',vaihdaSuunta); 
+  liiku(); // aloita animaatio kun sivu on latautunut
+}
+
+</script>
+</head>
+
+<body onload="init()">
+<h2>Liikkuva laatikko</h2>
+
+<div id="laatikko"></div>
+</body>
+</html>

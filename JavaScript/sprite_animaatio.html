@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<title>Javascript Sprite-animaatiot</title>
+<meta charset="UTF-8"/>
+<style>
+#alusta {
+	background-image: url("kuvat/sonic_tausta.png");
+	border: solid 1px black;
+}
+</style>
+
+</head>
+<body onload="init()">
+<canvas id="alusta" width="400" height="200">
+Peli vaatii toimiakseen canvas-elementin
+</canvas>
+<script>
+	var frame = 0;
+	var sijainti_x = 0;
+	//Alustus kun sivu on latautunut
+	function init() {
+		var elementti = document.getElementById("alusta");
+		konteksti = elementti.getContext("2d");
+		
+		sonic = new Image();
+		sonic.src = "kuvat/sonic_sprite.png";
+		sonic.onload = function () {
+			konteksti.drawImage(sonic,(frame * 50),0,50,50,0,150,50,50);
+		}
+		animoi();	
+	}
+
+	//sprite-animaatio
+	function animoi() {
+		if (frame < 5) {
+			frame++;
+		} else {
+			frame = 0;
+		}
+			
+		konteksti.clearRect(0,0,400,200); //pyyhitään entinen kuva pois
+		//piirretään uusi sprite-kuva 
+		konteksti.drawImage(sonic,(frame * 50),0,50,50,0,150,50,50);			
+		setTimeout(animoi,200); //rekursio eli kutsuu itseään 200 millisekunnin välein
+	}
+</script>
+</body>
+</html>

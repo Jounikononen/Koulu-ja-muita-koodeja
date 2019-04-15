@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+	</head>
+	<body>
+
+	<h2>Lämpötilan kertominen (if-lauseke)</h2>
+	
+	
+	Anna lämpötila: <br/>
+	<input id="lampo"/>
+	<button type="button" onclick="tutkiLampotila()">Tutki</button>
+	<br/>
+	<div id="laatikko"></div>
+	<script>
+	function tutkiLampotila() {
+		var keli = "";
+		var lt = document.getElementById("lampo").value;
+		//console.log(lt);  testausta varten tulostetaan consolelle
+		
+		if (isNaN(lt)) {
+			keli = "Anna kokonaisluku";
+		}
+		else if (lt < 0 && lt > -273) {//JA operaattori on &&
+			keli = "Pakkanen";
+		}
+		else if (lt == 0  || lt == 1) { // TAI operaattori on ||
+			keli = "Nollakeli";
+		}
+		else if (lt > 1 && lt <= 25) {
+			keli = "Suomen kesä";
+		}
+		else if (lt > 25) {
+			keli = "Helle";
+		}
+		else {
+			keli = "Ei voi olla noin kylmää";
+		}		
+		//Tulostus
+		document.getElementById( "laatikko").innerHTML = keli;
+	}
+	</script>
+	
+	</body>
+</html>
+
+

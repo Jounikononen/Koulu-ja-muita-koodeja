@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title></title>
+</head>
+<body>
+
+<h2>Kuvan vaihtoa animaatiolla</h2>
+
+<img id="img" src="kuvat/kissa1.jpg"/><br/>
+
+<br/><br/>
+<a href="javascript:animaatio()">Aloita</a>
+<a href="javascript:clearTimeout(t)">Pysäytä</a>
+<script>
+	//setTimeout -animaatio. Suorittaa funktion odotettuaan kutsun jälkeen halutun ajan
+	//Parempi ja vähän hitaampi kuin setInterval 
+	var t;
+	var images = [],
+	x = 0;
+	//ladataan kuvat taulukkoon
+	images[0] = "kuvat/kissa1.jpg";
+	images[1] = "kuvat/kissa2.jpg";
+	
+	//funktio  vaihtaa kuvia puolen sekunnin välein (500 millisekintia))
+	function animaatio()
+	{	
+		var img = document.getElementById("img");
+		img.src = images[x]; //näytetään vuorossa oleva kuva taulukosta
+		x++;
+
+		if(x >= images.length){ //aloitetaan alusta kun kaikki kuvat on näytetty
+			x = 0;
+		}   
+		t = setTimeout("animaatio()", 500); //rekursiivinen funktio eli kutsuu itseään
+	}
+</script>
+
+
+

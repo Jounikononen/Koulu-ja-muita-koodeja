@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>JavaScript-pohja</title>
+</head>
+<body>
+
+<h2>Luvun neliö</h2>
+
+<input id="luku"/>
+<br/>
+<button type="button" onclick="teeJotain()">Paina</button>
+<div id="laatikko1"></div>
+<br/>
+<div id="laatikko2"></div>
+
+
+<script>
+function teeJotain() {
+	//syöttötieto
+	var luku = document.getElementById("luku").value;
+	var nelio = luku * luku;
+	//tulostus
+	document.getElementById("laatikko1").innerHTML = "Luku on " + luku +
+	" <br/> Luvun neliö on " + nelio;
+	//document.getElementById("laatikko2").innerHTML = "Luvun neliö on " + 
+	nelio;
+	}
+</script>
+
+
+</body>
+</html>

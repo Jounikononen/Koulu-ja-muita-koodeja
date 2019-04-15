@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>JavaScript-pohja</title>
+</head>
+<body>
+
+<h2>Sähköpostiosoitteen muodostaminen</h2>
+
+Etunimi: <input id="eka"/>
+<br/>
+Sukunimi: <input id="toka"/>
+<br/>
+<br/>
+<button type="button" onclick="laskeYhteen()">Sähköpostiosoite</button>
+<div id="vastauslaatikko"></div>
+
+<script>
+function laskeYhteen() {
+	//syöttötiedot
+	var etunimi = document.getElementById("eka").value;
+	var sukunimi = document.getElementById("toka").value;
+	//sähköpostin muodostus
+	var summa = (etunimi) + (".") + (sukunimi) + ("@ankkalinna.com");
+	//tulostus
+	document.getElementById("vastauslaatikko").innerHTML =  "Sähköpostiosoitteesi: " + summa;
+	
+}
+</script>
+
+
+</body>
+</html>

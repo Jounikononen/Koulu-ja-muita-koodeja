@@ -1,0 +1,21 @@
+	
+	<!DOCTYPE html>
+	<html>
+	<body>
+	
+	<h2>Kello animaatio</h2>
+	
+	<script>
+	//funktio suoritetaan 1000 millisekunnin välein 
+	var t;
+	function kello() {
+		var d = new Date();
+		document.getElementById("kello").innerHTML = d.toLocaleTimeString();
+	}
+	</script>
+	<br/>
+	<button onclick="t = setInterval(kello,1000);">Start </button>
+	<button onclick="clearInterval(t)">Stop </button>
+	<p id="kello"></p>
+	</body>
+	</html>

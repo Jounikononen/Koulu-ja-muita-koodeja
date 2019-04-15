@@ -1,0 +1,34 @@
+	
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8"/>
+			<title></title>
+		</head>
+		<body>
+		
+		<h2>OnMouseOver harkka</h2>
+		
+		<img src="kuvat/kissa1.jpg" id="kuva" onmouseover="vaihdaKuva();" onmouseout="vaihdaKuvaTakaisin();" />
+		
+		<script>
+		//kuvanvaihtoanimaatio (hover)
+		//Tässä demossa tarvitaan kaksi samankokoista kuvaa, kissa1.jpg ja kissa2.jpg
+		function vaihdaKuva() {
+			//document.getElementById("kuva").src = "kissa2.jpg";
+			//TAI parempi tapa on ladata kuvat valmiiksi muistiin:
+			var hoverKuva = new Image();
+			hoverKuva.src = "kuvat/kissa2.jpg";
+			document.getElementById("kuva").src = hoverKuva.src;
+		}
+		function vaihdaKuvaTakaisin(){
+		var perusKuva = new Image();
+			perusKuva.src = "kuvat/kissa1.jpg";
+			document.getElementById("kuva").src = perusKuva.src;
+		}
+		</script>
+		</body>
+	</html>
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Arvosana- laskuri</title>
+
+</head>
+<body>
+
+<h2>Arvosana muuntaja</h2>
+
+Anna arvosana:<br/>
+<input id="arvosana"/>
+<button type="button" onclick="tutkiArvosana()">Tutki</button>
+<br/>
+<div id="laatikko"></div>
+<script>
+function tutkiArvosana(){
+	var arvos = "";
+	var It = document.getElementById("arvosana").value;
+	if (isNaN(It)) {
+		arvos = "anna kokonaisluku";
+	}
+	else if (It == 0) {
+		arvos = "Hylätty";
+	}
+	else if (It == 1 || It == 2) {
+		arvos = "Tyydyttävä";
+	}
+	else if (It == 3 || It == 4) {
+		arvos = "Hyvä";
+	}
+	else if (It == 5)	{
+		arvos = "Kiitettävä";
+	}
+	else {
+		arvos = "Syötä arvosana 0-5";
+	}
+	document.getElementById("laatikko").innerHTML = arvos;
+
+}
+</script>
+</body>
+</html>
+
