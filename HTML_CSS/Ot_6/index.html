@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+	 .panel-footer {
+	 overflow:scroll;
+	 }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+	button {
+	float:right;
+	}
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Vaatekauppa</h1>      
+    <p>Halpaa & tyylikästä</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Tervetuloa</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Etusivu</a></li>
+        <li><a href="tuotteet.html">tuotteet</a></li>
+        
+      </ul>
+      
+    </div>
+  </div>
+  
+  
+</nav>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4" style="width:100%;">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align:center;">UUTTA</div>
+        <div class="panel-body"></div>
+        <div class="panel-footer" style="height:150px;"><b>Kevään muoti on entistä sporttisempi - katso kuvat ihanista takeista - 23.03.2016</b>
+<br><br>
+<a href="tuotteet.html">Tänä keväänä saa pukeutua vielä viime kevättäkin sporttisemmin: unohda trenssit ja nahkarotsit, sillä juuri nyt on trendikkäintä vetäistä päälle sporttinen pusakkamallinen pilottitakki.
+Mikäli muodikkuuden ohjenuorana pidetään julkkiksia ja muotibloggaajia, sporttinen pusakka todella on tämän kevään takki. Sen ei kuitenkaan tarvitse olla tylsä musta tai sininen, vaan kaikista muodikkain se on ihanan naisellisenna kukkakuosilla!</a>
+<br><hr>
+<b>Kierrättäminen kannattaa: Merkkivaatteissa arvo säilyy todella hyvin - 16.03.2016</b>
+<br><br>
+<a href="tuotteet.html">Suomessa käytettyjen vaatteiden ja kenkien kierrättäminen on todella helppoa, sillä kauppa käy vilkkaana netissä. Monien merkkivaatteiden jälleenmyynti on taattu, joskus jopa voitolla. Katso, mitkä merkit käyvät parhaiten kaupaksi käytettynä.</a>
+<br><hr>
+<b>Tässä on kevään muodikkain takki! - 10.02.2016</b>
+<br><br>
+<a href="tuotteet.html">Päivien kirkastuessa ja lämmetessä untuvapomppa on aika vaihtaa keveämpään asuun. Aivan kesätamineisiin ei vielä Suomen keväässä voida siirtyä, mutta keveät mutta lämpimät kevättakit lämmittävät ihanasti ja istuvat ihanan tyylikkäästi paksujen toppavaatteiden jälkeen.</a></b>
+<br><hr>
+<b>Nämä viime vuoden vaatetrendit jäävät nyt unholaan!
+10.01.2016</b>
+<br><br>
+<a href="tuotteet.html">Viime vuosi tunnetaan erilaisista trendien sekoituksista. Yksi erikoisimmista trendeistä oli pesunkestävät terveyssandaalit vaatteiden kuin vaatteiden kanssa, mutta muoti jäänee tänä vuonna historiaan. Katso mitkä muut viime vuoden villitykset jäänevät unholaan.</a>
+
+
+</div>
+
+      </div>
+    </div>
+
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">PÄIVÄN TARJOUS</div>
+        <div class="panel-body"><img src="images/kuva4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Tyylikäs naisten vaate naisille sekä miehille<br>30€<button type="button">Lisää ostoskoriin</button></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">PÄIVÄN TARJOUS</div>
+        <div class="panel-body"><img src="images/kuva5.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Merimieskuosit nyt halvalla<br>10€<button type="button">Lisää ostoskoriin</button></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">PÄIVÄN TARJOUS</div>
+        <div class="panel-body"><img src="images/kuva6.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Pirun tyylikäs paita<br>20€<button type="button">Lisää ostoskoriin</button></div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+<footer class="container-fluid text-center">
+  <p>Haluatko uutiskirjeemme?</p>  
+  <form class="form-inline">Syötä email:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Vahvista</button>
+  </form>
+</footer>
+
+</body>
+</html>

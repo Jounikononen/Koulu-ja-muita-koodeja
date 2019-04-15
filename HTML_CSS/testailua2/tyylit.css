@@ -1,0 +1,58 @@
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+
+    .row.content {height: 450px}
+    
+
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+	  
+    }
+ 
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+	img {
+		width:100%px;
+		height:230px;
+	}
+	
+
+	
+	.valmis {
+		width:45%;
+		margin:20px;
+		height:initial;
+		float:left;
+		border:solid 1px black;
+		text-align:center;
+		padding:10px;
+		
+	}
+	
+	.valmis p {
+	
+	}
+	
+   
+    @media screen and (max-width: 767px) {
+      
+      .row.content {height:auto;} 
+    }
+	
+	@media screen and (max-width: 1040px) {
+      
+      .valmis {
+		  width:95%;
+		  } 
+    }
+	

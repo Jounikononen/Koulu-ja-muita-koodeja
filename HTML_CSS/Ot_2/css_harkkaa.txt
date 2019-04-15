@@ -1,0 +1,44 @@
+.header h1, .fa:hover{
+		cursor:pointer;
+	}
+	
+	margin:auto; /*Sivu keskittyy, kun mennään yli 960pikselin yli*/
+	
+	
+	
+	
+	
+@media screen and (max-width:960px){	/*breakpoint eli näiden aaltosulkujen sisään kaikki mitä tapahtuu kun leveys on alle 800px.*/
+	body{
+		max-width:550px;
+		margin:auto; /*Sivu keskittyy, kun mennään yli 960pikselin yli*/
+	
+	}
+	
+	
+	
+	
+	
+}
+		
+}
+/*Yli 801px näytöille eli osa tableteista tai kannettavista*/
+@media only screen and (max-width:320px) {
+
+}
+
+
+*/
+
+
+@media screen and (max-width:300px){	/*breakpoint eli näiden aaltosulkujen sisään kaikki mitä tapahtuu kun leveys on alle 800px.*/
+	.col-2 {
+		display:none;
+	
+	}
+	.col-3 {
+		width:100%;
+		margin:auto;
+	}
+	
+}
