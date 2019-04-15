@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#kuva {
+	position: absolute;
+}
+
+
+</style>
+<title></title>
+<meta charset="utf-8"/>
+
+</head>
+<body>
+
+<h2>Hiiren sijainti</h2>
+
+
+<h1 id="laatikko">0,0</h1>
+<br>
+<img id="kuva" src="kuvat/kissa1.jpg"/>
+
+<script>
+// Hiiren ohjelmointi
+	document.addEventListener("mousemove", liiku);
+	function liiku(event){
+		var x = event.clientX;
+		var y = event.clientY;
+		document.getElementById("laatikko").innerHTML = x + ", " + y;
+		document.getElementById("kuva").style.left = x - 300 + "px";
+		document.getElementById("kuva").style.top = y + "px";
+	}
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Ot3_e</title>
+<meta charset="utf-8"/>
+
+</head>
+
+<body>
+<br>
+<br>
+<img src="kuvat/Chrysanthemum.JPG" id="kuvat" width="400px" height="200px"/>
+<br>
+<br>
+<a href="javascript:edellinen();"><img src="kuvat/prev.JPG"/></a>
+<a href="javascript:seuraava();"><img src="kuvat/next.JPG"/></a>
+
+<script>
+	
+	
+	var i 			= 0;
+	var kuva 		= [];
+	
+	
+			//Luodaan kuvat
+			
+			kuva[0] = new Image();
+			kuva[0].src = "kuvat/Chrysanthemum.jpg";
+			kuva[1] = new Image();
+			kuva[1].src = "kuvat/Desert.jpg";
+			kuva[2] = new Image();
+			kuva[2].src = "kuvat/Hydrangeas.jpg";
+			kuva[3] = new Image();
+			kuva[3].src = "kuvat/jellyfish.jpg";
+			kuva[4] = new Image();
+			kuva[4].src = "kuvat/Koala.jpg";
+			kuva[5] = new Image();
+			kuva[5].src = "kuvat/Lighthouse.jpg";
+			kuva[6] = new Image();
+			kuva[6].src = "kuvat/Penguins.jpg";
+			kuva[7] = new Image();
+			kuva[7].src = "kuvat/Tulips.jpg";
+	
+	
+	
+	
+	
+	//"Edellinen"- nappi functio
+	
+	function edellinen() {
+		i--;
+		if(i == -1) {
+			i = 7;
+		}
+		document.getElementById("kuvat").src = kuva[i].src;
+	
+	}
+
+	//"Seuraava"- nappi functio
+	
+	function seuraava() {
+	i++;
+		if(i == 7) {
+			i = 0;
+		}
+		
+		//Tulostus
+		
+		document.getElementById("kuvat").src = kuva[i].src;
+	
+	
+	}
+
+
+
+
+
+
+</script>
+</body>
+</html>

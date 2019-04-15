@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title></title>
+<meta charset="utf-8"/>
+
+</head>
+<body>
+<canvas id="tausta" width="1200" height="800" style="border:1px solid"></canvas>
+
+
+
+</body>
+<script>
+
+var x = 0;
+var y = 0;
+var nopeusX = 1;
+var nopeusY = 1;
+
+//Muuttuja, content eli canvas "olio"
+var ctx = document.getElementById("tausta");
+
+//ctx on nyt objekti, jolla on metodit ja ominaisuudet(properties) canvaksen käsittelyyn.
+var ctx = ctx.getContext("2d"); 
+
+var kuva = new Image();
+kuva.src = "kuvat/pallo.png";
+kuva.onload = function () {		//Functio ajetaan vasta, kun kuva on latautunut = "onload".
+	ctx.drawImage(kuva,0,0);	//Piirtää kuvan canvasille.
+};
+				
+//Liikkuva pallo.
+function liikutaPalloa() {
+	ctx.clearRect(0,0,1200,800);
+	ctx.drawImage(kuva,x,y);
+	x = x + nopeusX;
+	nopeusX++;
+	y = y + nopeusY;
+	
+}
+
+//Animaation ajastus
+setInterval(liikutaPalloa, 10);
+
+
+</script>
+</body>
+</html>

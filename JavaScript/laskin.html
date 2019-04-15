@@ -1,0 +1,107 @@
+<!DOCUMENT html>
+<html>
+<head>
+
+<title></title>
+<meta charset="utf-8"/>
+
+</head>
+
+<body>
+<table border="1" width="160" align="center">
+
+<h2>Laskin</h2>
+
+<tr>
+	<td  colspan="4">
+	<input id="laatikko">
+	</td>
+</tr>
+<tr>
+	<td width="40">
+		<input type="button" value="  7  " onclick="syota(7);">
+	</td>
+	<td width="40">
+		<input type="button" value="  8  " onclick="syota(8);">
+	</td>
+	<td width="40">
+		<input type="button" value="  9  " onclick="syota(9);">
+	</td>
+	<td width="40">
+		<input type="button" value="  C  " onclick="tyhjaa();">
+	</td>
+</tr>
+</tr>
+<tr>
+	<td width="40">
+		<input type="button" value="  4  " onclick="syota(4);">
+	</td>
+	<td width="40">
+		<input type="button" value="  5  " onclick="syota(5);">
+	</td>
+	<td width="40">
+		<input type="button" value="  6  " onclick="syota(6);">
+	</td>
+	<td width="40">
+		<input type="button" value="  /  " onclick="syota('/');">
+	</td>
+</tr>
+</tr>
+<tr>
+	<td width="40">
+		<input type="button" value="  1  " onclick="syota(1);">
+	</td>
+	<td width="40">
+		<input type="button" value="  2  " onclick="syota(2);">
+	</td>
+	<td width="40">
+		<input type="button" value="  3  " onclick="syota(3);">
+	</td>
+	<td width="40">
+		<input type="button" value="  *  " onclick="syota('*');">
+	</td>
+</tr>
+</tr>
+<tr>
+	<td width="40">
+		<input type="button" value="  0  " onclick="syota(0);">
+	</td>
+	<td width="40">
+		<input type="button" value="  =  " onclick="laske();">
+	</td>
+	<td width="40">
+		<input type="button" value="  -  " onclick="syota('-');">
+	</td>
+	<td width="40">
+		<input type="button" value="  +  " onclick="syota('+');">
+	</td>
+</tr>
+
+
+</table>
+<script>
+	var laskulauseke = "";
+	function syota(merkki) {
+		laskulauseke = laskulauseke + merkki;
+		document.getElementById("laatikko").value = laskulauseke;
+	}
+	
+	
+	
+	function tyhjaa() {
+	laskulauseke = "";
+	document.getElementById("laatikko").value = laskulauseke;
+	}
+	
+	
+	
+	function laske(){
+	//Hyväksyy vain numerot ja operaattorit eli parannetaan tietoturvaa
+	var lauseke = laskulauseke.replace(/[^-()\d\/*+.]/g, ''); //Parantaa tietoturvaa. Hyväksyy ainoastaan numerot ja (* / / / + / -  )-merkit
+	document.getElementById("laatikko").value = eval(laskulauseke);	
+	}
+	
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Ot3_d</title>
+<meta charset="utf-8"/>
+
+</head>
+<body>
+<br>
+<br>
+<h1>Arvo 50-alkioinen taulukko täyteen satunnaislukuja väliltä 1-200</h1>
+<br>
+<br>
+<button type="button" onclick="laske()">Arvo luvut</button>
+<br>
+<h2><div id="laatikko1"></div></h2>
+<br>
+<h2><div id="laatikko2"></div></h2>
+<h2><div id="laatikko3"></div></h2>
+<br>
+<h2><div id="laatikko4"></div></h2>
+<br>
+<br>
+<script>
+	function laske(){
+	var i;
+	var luvut		= [];
+	var tulostus 	= "";
+	
+	//Arvotaan numerot taulukkoon
+	for (i = 0; i< 50; i++) {
+		luvut[i] = Math.floor((Math.random()*200)+1);
+	}
+	
+	//Lajittelu numerojärjestykseen
+	var numerot = luvut.sort(function(a, b) {return a-b});
+	
+	//Muodostetaan tulostettava Merkkijono
+	for (i = 0; i < 50; i++) {
+		tulostus += " " + numerot[i];
+	}
+	
+	var pienin = numerot[0];
+	var suurin = numerot[49];
+	var kaikki = 0;
+	for(i = 0;i < luvut.length;i++){
+		kaikki = kaikki + luvut[i];
+	}
+	
+	//Tulostus
+	document.getElementById("laatikko1").innerHTML = tulostus;
+	document.getElementById("laatikko2").innerHTML = "Pienin luku: " + pienin;
+	document.getElementById("laatikko3").innerHTML = "Suurin luku: " + suurin;
+	document.getElementById("laatikko4").innerHTML = "Kaikki luvut yhteensä: " + kaikki;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+</script>
+</body>
+</html>

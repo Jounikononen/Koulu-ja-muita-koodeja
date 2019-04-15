@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title></title>
+<meta charset="utf-8"/>
+
+</head>
+<body>
+<canvas id="kangas" width="640" height="480" style="border:1px solid"></canvas>
+<br>
+Väri: <button onclick="vari();">väripaletti</button>
+Kynä: 
+<button onclick="tyhjenna();">Tyhjennä</button>
+
+
+</body>
+<script>
+
+window.addEventListener("mousedown", piirra);		//Kun hiirtä painaa, ajetaan "piirra()" functio.
+window.addEventListener("mouseup", eiPiirra);		//Kun hiirtä ei paina, ajetaan "eiPiirra()" functio.
+window.addEventListener("mousemove", liiku);
+
+
+
+//Muuttuja, content eli canvas "olio"
+var ctx = document.getElementById("kangas");
+
+//ctx on nyt objekti, jolla on metodit ja ominaisuudet(properties) canvaksen käsittelyyn.
+var ctx = ctx.getContext("2d"); 
+
+function piirra(event) {
+	
+
+	
+	var posX = event.clientX;		//Kun hiiri liikkuu, windows antaa hiiren leveys_sijainnin.
+	var posY = event.clientY;		//Kun hiiri liikkuu, windows antaa hiiren korkeus_sijainnin.
+	
+	//Piirretään ympyrä hiiren sijainnin osoittamaan kohtaan.
+	ctx.beginPath();
+	ctx.arc(posX,posY,5,0,2*Math.PI);
+	ctx.fillStyle = "#ff0000";
+	ctx.fill();
+
+	}
+	
+function liiku(event) {
+	ctx.beginPath();
+	ctx.arc(posX,posY);
+
+
+}
+	
+	
+function vari(event) {				//???????????????????????????
+	var color = rbg(255,0,0);
+	color = this.value;
+	document.getElementById("color").onchange = change;
+}
+	
+	
+function eiPiirra(event) {
+	
+	
+	
+	var posX = event.clientX;
+	var posY = event.clientY;
+	ctx.beginPath();
+	ctx.arc(posX,posY,5,0,2*Math.PI);
+	ctx.fillStyle = "white";
+	ctx.fill();
+
+	
+	
+	}
+	
+function tyhjenna(event) {
+	ctx.clearRect(0,0,640,480);
+
+}
+	
+	
+	
+	
+	
+	
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title></title>
+<meta charset="utf-8"/>
+
+</head>
+<body>
+<canvas id="kangas" width="640" height="400" style="border:1px solid"></canvas>
+
+
+
+</body>
+<script>
+
+//Muuttuja, content eli canvas "olio"
+var ctx = document.getElementById("kangas");
+
+//ctx on nyt objekti, jolla on metodit ja ominaisuudet(properties) canvaksen käsittelyyn.
+var ctx = ctx.getContext("2d"); 
+var x = 0;	//Pallon keskipiste
+var y = 0;	
+var a = 640;
+var b = 800;
+var r = 10;
+
+//Piirretään pallo functiolla. Voi piirtää useita palloja yhdellä functiolla. Jos erikokoisia palloja niin tarvitsee myös säteen.
+function teePallo (x,y,r) {
+	ctx.beginPath();					//Aloitetaan piirtämään reunaviivaa.
+	ctx.arc(x,y,r,20,0,2*Math.PI);		//Sijainti vaihtuu.
+	ctx.fillStyle = "#0096dd";			//Pallon väri.
+	ctx.fill();							//Täyetään pallo värillä.
+	ctx.closePath();
+	
+}
+
+//Liikutetaan palloa toisella functiolla.
+function liikutaPalloa() {
+	ctx.clearRect(0,0,800,640);
+	teePallo(x,y,r);		//Eka pållo.
+	x = x + 5;						//Pallon x muuttuu kokoajan isommaksi = liikkuu kokoajan oikealle.
+	y++;							//Pallon y muuttuu kokoajan isommaksi = liikkuu kokoajan alaspäin.
+	r++;
+	teePallo(a,b,r);		//Toinen pallo.
+	a = a - 2;			//Pallon nopeus.
+	b = b - 3;			//Pallon nopeus.
+}
+
+setInterval(liikutaPalloa, 10);		//Kutsutaan "liikutaPalloa" functiota 10millisekunnin välein.
+
+
+
+</script>
+</body>
+</html>

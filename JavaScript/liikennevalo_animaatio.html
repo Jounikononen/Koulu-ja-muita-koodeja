@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Ot5_c</title>
+<meta charset="utf-8"/>
+
+</head>
+
+<img id="kuva" src="punainen.png"/>
+<br>
+<br> 
+<button type="button" onclick="start()";>Käynnistä liikennevalot</button>
+<body>
+
+
+
+<script>
+
+var t; 
+var kuvat = [];
+kuvat[0] = "punainen.png";
+kuvat[1] = "puna_kelt.png";
+kuvat[2] = "vihrea.png";
+kuvat[3] = "keltainen.png";
+
+var x = 0;
+
+	function start() {
+		document.getElementById("kuva").src = kuvat[x];
+			x++;
+			if(x >= kuvat.length) {
+				x = 0;
+			
+			}
+			
+	t = setTimeout("start()", 1000); //Rekursio
+	
+	}
+
+</script>
+</body>
+</html>

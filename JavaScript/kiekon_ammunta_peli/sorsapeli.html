@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>ufon/kiekon ammunta- peli</title>
+	<meta charset="utf-8"/>
+	<style>
+		#kangas {
+			background-image: url("tausta.jpg");
+			border: solid 1px black;
+		}
+	</style>
+</head>
+<body onload="init();">
+	<canvas id="kangas" width="640" height="480">
+	
+	</canvas>
+	<script>
+	//Muuttujat
+		var frame = 0;
+		var x_sijainti = 0;
+		var y_sijainti = 100;
+		var nopeus = 15;
+		document.getElementById("kangas").style.cursor = "crosshair";
+	
+	//Sivun latautuminen
+	function init() {
+			 canvas = document.getElementById("kangas");
+			ctx = canvas.getContext("2d");
+		
+			kiekko = new Image();
+			kiekko.src = "kiekko.png";
+			kiekko.onload = function () {
+				ctx.drawImage(kiekko,(frame * 48),0,10,100,0,y_sijainti,48,27);
+			}
+			window.addEventListener("click",ammu); 
+			
+			liiku();
+			animoi();
+					
+		}
+
+	//Kiekon ampuminen 
+	function ammu(evt){
+		
+		var rect = canvas.getBoundingClientRect();
+		var posx= evt.clientX - rect.left;
+		var posy= evt.clientY - rect.top;
+	//Osuma
+		if(posx > x_sijainti && posx < x_sijainti + 48 && posy > y_sijainti && posy < y_sijainti + 27 ){
+			x_sijainti = -100;
+			y_sijainti = Math.floor(Math.random() * 480);
+		}		
+	}
+
+	//Kiekon liikkuminen
+	function liiku() {	
+		x_sijainti += nopeus;
+		if(x_sijainti > 650) {
+			x_sijainti = -50;
+			y_sijainti = Math.floor(Math.random() * 480); 
+		}
+		setTimeout(liiku,40); 
+	}
+
+	//Kiekon pyöritys
+	function animoi() {		
+		if (frame < 1) {
+			frame++;
+		} else {
+			frame = 0;
+		}			
+		ctx.clearRect(0,0,640,480); 		
+		ctx.drawImage(kiekko,(frame * 48),0,10,100,x_sijainti,y_sijainti,100,30); 	
+		setTimeout(animoi,50); 			
+	}
+	</script>
+</body>
+</html>
