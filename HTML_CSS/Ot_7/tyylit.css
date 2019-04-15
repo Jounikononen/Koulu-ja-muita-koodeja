@@ -1,0 +1,121 @@
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+	max-width: 100%;
+	font-size: 16px;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	
+}
+
+h1, h2 {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 200%;
+	letter-spacing: 2px;
+}
+
+/* Linkit */
+a:link, a:visited {
+	display: block;
+	text-decoration: none;
+	padding: 0;
+	color: #fff;
+}
+
+[class*="col"], #header {
+	min-height: 100px;
+	box-shadow: 0px 3px 8px rgba(0,0,0,0.8);
+	width: 100%;
+	overflow: auto;
+	padding: 25px 10px 10px 10px;
+	margin-top: 10px;
+}
+
+#header {
+	background-color: #000;
+}
+
+#heading {
+	visibility: hidden;
+	float: left;
+}
+
+/* Ikonit */
+
+#icons {
+	max-width: 100%;
+}
+
+#icons i {
+	
+	/* 100 / 6 = 16,0..... 5% jätetty margineille */
+	float: left;
+	margin: 2.5%;
+	width: 11.66666666666667%;
+}
+
+.col-1 {
+	background-color: #1b2726;
+}
+
+.col-2 {
+	background-color: #3c5148;
+}
+
+.col-3 {
+	background-color: #6b8e4e;
+}
+
+.col-4 {
+	background-color: #b2c5b3;
+}
+
+.col-5 {
+	background-color: #d5ddde;
+}
+
+@media only screen and (max-width:218px) {
+	
+	[class*="col"] {display: none;}
+	
+	#icons i {
+		color: #e0ce90; 
+		background-color: #14435b; 
+		width: 100%;
+		margin: auto;
+		padding: 10px 0;
+		margin-top: 5px;
+		text-align: center;
+	}
+
+}
+
+@media only screen and (min-width: 800px) {
+	body { margin: 0;}
+	
+	#heading {visibility: initial; width: 60%;}
+	
+	#icons {float: right; width: 40%}
+}
+
+@media only screen and (min-width: 960px) {
+	body {margin: auto; width: 960px;}
+	
+	[class*="col"] {
+		width: 20%; 
+		float: left;
+	}
+	
+	h2 {
+		font-size: 150%; 
+		text-align: center;
+	}
+	
+}
