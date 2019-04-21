@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<button onclick="getLocation()">Paikanna itsesi</button>
+
+<p id="demo"></p>
+
+<script>
+//Paikannus toimii Crome 50:llä vain https:n yli tai 127.0.0.1 ip-osoittella
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br/>Longitude: " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>
